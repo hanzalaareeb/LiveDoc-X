@@ -1,5 +1,12 @@
 # LiveDocX — Architecture Review & Forward Roadmap
 
+> **Implementation status (August 11, 2026):** The foundation, JWT/profile
+> fixes, and authenticated document-management API described in the early
+> phases have now been implemented and covered by tests. The shortcomings list
+> below is retained as the original audit snapshot; the ingestion, Celery,
+> extraction, embedding, hybrid-search, and summarization phases remain future
+> work. See `README.md` for the current API contract.
+
 ## Context
 
 LiveDocX is a document intelligence platform: users upload documents (any type), the system deduplicates, parses, chunks, embeds, and indexes them, then serves semantic search with page-level citations and AI-written summaries. Public-vs-private metadata controls cross-user visibility.
