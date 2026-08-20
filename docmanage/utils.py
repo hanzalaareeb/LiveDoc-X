@@ -1,13 +1,16 @@
 import hashlib
 
+
 def calculate_hash(file):
+    """Calculate a SHA-256 digest without loading the whole upload into memory."""
     sha256_hash = hashlib.sha256()
-    for byte_block in file.chunks():
-        sha256_hash.update(byte_block)
+
+    try:
+        file.seek(0)
+        chunks = file.chunks()
+        for byte_block in chunks:
+            sha256_hash.update(byte_block)
+    finally:
+        file.seek(0)
+
     return sha256_hash.hexdigest()
-
-
-def process_document_task():
-    """Not Defined
-    """
-    pass

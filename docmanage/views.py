@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+"""Document HTML views are intentionally absent; LiveDocX is API-only."""
